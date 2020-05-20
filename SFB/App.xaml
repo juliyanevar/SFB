@@ -1,0 +1,48 @@
+﻿<Application x:Class="SFB.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:SFB"
+             xmlns:d="clr-namespace:SFB.Main"
+             xmlns:l="clr-namespace:SFB.Login"
+             xmlns:r="clr-namespace:SFB.Registration"
+             xmlns:h="clr-namespace:SFB.HomePage"
+             xmlns:fs="clr-namespace:SFB.FilmsPage"
+             xmlns:ssp="clr-namespace:SFB.SerialsPage"
+             xmlns:bsp="clr-namespace:SFB.BooksPage"
+             xmlns:fp="clr-namespace:SFB.FilmPage"
+             xmlns:bp="clr-namespace:SFB.BookPage"
+             xmlns:ch="clr-namespace:SFB.Chapters"
+             xmlns:sp="clr-namespace:SFB.SerialPage"
+             xmlns:s="clr-namespace:SFB.SeriesPage"
+             xmlns:a="clr-namespace:SFB.Admin"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <local:MainWindowViewModel x:Key="MainWindowViewModel"/>
+        <d:MainViewModel x:Key="MainViewModel"/>
+        <l:LoginViewModel x:Key="LoginViewModel"/>
+        <r:RegistrationViewModel x:Key="RegistrationViewModel"/>
+        <h:HomePageViewModel x:Key="HomePageViewModel"/>
+        <fs:FilmsPageViewModel x:Key="FilmsPageViewModel"/>
+        <ssp:SerialsPageViewModel x:Key="SerialsPageViewModel"/>
+        <bsp:BooksPageViewModel x:Key="BooksPageViewModel"/>
+        <fp:FilmPageViewModel x:Key="FilmPageViewModel"/>
+        <bp:BookPageViewModel x:Key="BookPageViewModel"/>
+        <ch:ChaptersViewModel x:Key="ChaptersViewModel"/>
+        <sp:SerialPageViewModel x:Key="SerialPageViewModel"/>
+        <s:SeriesViewModel x:Key="SeriesViewModel"/>
+        <a:BookAdminPageViewModel x:Key="BookAdminPageViewModel"/>
+        <a:FilmAdminPageViewModel x:Key="FilmAdminPageViewModel"/>
+        <a:HomeAdminPageViewModel x:Key="HomeAdminPageViewModel"/>
+        <a:SerialAdminPageViewModel x:Key="SerialAdminPageViewModel"/>
+        <a:MainAdminViewModel x:Key="MainAdminViewModel"/>
+        <l:ForgetPasswordViewModel x:Key="ForgetPasswordViewModel"/>
+        <ResourceDictionary x:Key="MaterialDesign">
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.DeepPurple.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Lime.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary> 
+    </Application.Resources>
+</Application>

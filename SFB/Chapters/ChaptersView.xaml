@@ -1,0 +1,36 @@
+﻿<UserControl x:Class="SFB.Chapters.ChaptersView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:local="clr-namespace:SFB.Chapters"
+             mc:Ignorable="d"
+             DataContext="{StaticResource ChaptersViewModel}"
+             Resources="{StaticResource MaterialDesign}"
+             d:DesignHeight="600" d:DesignWidth="830">
+    <Grid>
+        <StackPanel Orientation="Vertical">
+            <Grid>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                    <Button Style="{StaticResource MaterialDesignIconForegroundButton}"  Command="{Binding BackCommand}">
+                        <materialDesign:PackIcon Kind="ArrowLeft" Height="25" Width="25" />
+                    </Button>
+                </StackPanel>
+            </Grid>
+            <Grid Height="10"/>
+            <Label Content="{Binding NameBook}" HorizontalAlignment="Center" FontSize="25"/>
+            <Grid Height="15"/>
+            <DataGrid Width="225" AutoGenerateColumns="False" ItemsSource="{Binding Chapters, Mode=TwoWay}"  Height="400"  HorizontalScrollBarVisibility="Hidden">
+                <DataGrid.Columns>
+                    <DataGridCheckBoxColumn Width="75" Header="Read?" Binding="{Binding Status}"/>
+                    <DataGridTextColumn Width="150" Header="Number of chapter" Binding="{Binding Number}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+            <Grid Height="20"/>
+            <Button HorizontalAlignment="Center"  Style="{StaticResource MaterialDesignOutlinedButton}"  Command="{Binding SaveCommand}">
+                SAVE
+            </Button>
+        </StackPanel>  
+    </Grid>
+</UserControl>

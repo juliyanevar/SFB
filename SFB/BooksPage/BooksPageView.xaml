@@ -1,0 +1,27 @@
+﻿<UserControl x:Class="SFB.BooksPage.BooksPageView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SFB.BooksPage"
+             mc:Ignorable="d" 
+             DataContext="{StaticResource BooksPageViewModel}"
+             Resources="{StaticResource MaterialDesign}"
+             d:DesignHeight="600" d:DesignWidth="830">
+    <Grid>
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+            <Grid Height="20"/>
+            <Label Content="Books" FontSize="35" HorizontalAlignment="Center"/>
+            <DataGrid SelectedItem="{Binding SelectedBook}" Background="{x:Null}" Height="450" AutoGenerateColumns="False" ItemsSource="{Binding BooksObs}">
+                <DataGrid.Columns>
+                    <DataGridTextColumn IsReadOnly="True"  Header="Name" Width="350" Binding="{Binding Name}" />
+                    <DataGridTextColumn IsReadOnly="True"  Header="Author" Width="150" Binding="{Binding Author}"/>
+                    <DataGridTextColumn IsReadOnly="True"  Header="Count of chapters" Width="150" Binding="{Binding CountOfChapter}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+            <Button HorizontalAlignment="Center"  Style="{StaticResource MaterialDesignOutlinedButton}"  Command="{Binding MoreInf}">
+                MORE INFORMATION ABOUT BOOK
+            </Button>
+        </StackPanel>
+    </Grid>
+</UserControl>

@@ -1,0 +1,73 @@
+﻿<UserControl x:Class="SFB.HomePage.HomePageView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SFB.HomePage"
+             mc:Ignorable="d" 
+             DataContext="{StaticResource HomePageViewModel}"
+             Resources="{StaticResource MaterialDesign}"
+             d:DesignHeight="600" d:DesignWidth="830">
+    <Grid Background="White">
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+            <Grid Height="10"/>
+            <Label Content="{Binding UserName}" FontSize="35" Foreground="#673ab7" HorizontalAlignment="Center"/>
+            <Grid Height="10"/>
+            <Grid Height="480">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Grid Width="260">
+                        <StackPanel Orientation="Vertical">
+                            <Label Content="Serials" FontSize="20" HorizontalAlignment="Center"/>
+                            <DataGrid FontSize="15" Height="218" SelectedItem="{Binding SelectedWatchingSerial}" ItemsSource="{Binding WatchingSerialsObs}" AutoGenerateColumns="False" Background="{x:Null}">
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="Watching" Binding="{Binding Name}"/>
+                                </DataGrid.Columns>
+                            </DataGrid>
+                            <DataGrid FontSize="15" Height="218" SelectedItem="{Binding SelectedLaterSerial}" ItemsSource="{Binding LaterSerialsObs}" AutoGenerateColumns="False" Background="{x:Null}">
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="Later" Binding="{Binding Name}"/>
+                                </DataGrid.Columns>
+                            </DataGrid>
+                        </StackPanel>
+                    </Grid>
+                    <Separator Margin="5"/>
+                        <Grid Width="260">
+                        <StackPanel Orientation="Vertical">
+                            <Label Content="Films" FontSize="20" HorizontalAlignment="Center"/>
+                            <DataGrid FontSize="15" Height="218" ItemsSource="{Binding WatchingFilmsObs}" SelectedItem="{Binding SelectedWatchingFilm}" AutoGenerateColumns="False" Background="{x:Null}">
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="Watching" Binding="{Binding Name}"/>
+                                </DataGrid.Columns>
+                            </DataGrid>
+                            <DataGrid FontSize="15" Height="218" ItemsSource="{Binding LaterFilmsObs}" SelectedItem="{Binding SelectedLaterFilm}" AutoGenerateColumns="False" Background="{x:Null}">
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="Later" Binding="{Binding Name}"/>
+                                </DataGrid.Columns>
+                            </DataGrid>
+                        </StackPanel>
+                    </Grid>
+                    <Separator Margin="5"/>
+                    <!--<Grid Width="10" Background="#ede7f6"/>-->
+                    <Grid Width="260">
+                        <StackPanel Orientation="Vertical">
+                            <Label Content="Books" FontSize="20" HorizontalAlignment="Center"/>
+                            <DataGrid FontSize="15" Height="218" ItemsSource="{Binding ReadingBooks}" SelectedItem="{Binding SelectedReadingBook}" AutoGenerateColumns="False" Background="{x:Null}">
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="Reading" Binding="{Binding Name}"/>
+                                </DataGrid.Columns>
+                            </DataGrid>
+                            <DataGrid FontSize="15" Height="218" ItemsSource="{Binding LaterBooks}" SelectedItem="{Binding SelectedLaterBook}" AutoGenerateColumns="False" Background="{x:Null}">
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="Later" Binding="{Binding Name}"/>
+                                </DataGrid.Columns>
+                            </DataGrid>
+                        </StackPanel>
+                    </Grid>
+                </StackPanel>
+            </Grid>
+            <Button HorizontalAlignment="Center"  Style="{StaticResource MaterialDesignOutlinedButton}"  Command="{Binding InfoCommand}">
+                MORE INFORMATION
+            </Button>
+        </StackPanel>
+    </Grid>
+</UserControl>
