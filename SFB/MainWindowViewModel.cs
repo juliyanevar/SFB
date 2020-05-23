@@ -59,14 +59,14 @@ namespace SFB
             get => (MainWindowViewModel)userCon[3];
         }
 
-        public static MainAdminView MainAdminContext
+        public static MainAdminViewModel MainAdminContext
         {
-            get => (MainAdminView)userCon[4];
+            get => (MainAdminViewModel)userCon[4];
         }
 
-        public static ForgetPasswordView ForgetPasswordContext
+        public static ForgetPasswordViewModel ForgetPasswordContext
         {
-            get => (ForgetPasswordView)userCon[5];
+            get => (ForgetPasswordViewModel)userCon[5];
         }
         #endregion
 
@@ -85,12 +85,13 @@ namespace SFB
                         return MV;
                     case 3:
                         MainAdminView MAV = new MainAdminView();
-                        //MainWindowViewModel.MainAdminContext.Test();
+                        MainWindowViewModel.MainContext.test();
                         return MAV;
                     case 4:
                         return new ForgetPasswordView();
 
                 }
+                MainWindowViewModel.MainContext.test();
                 return new LoginView();
             }
         }
@@ -127,14 +128,35 @@ namespace SFB
 
         public void CenterWindowOnScreen()
         {
-            //double screenWidth = System.Windows.SystemParameters.PrimaryScreenWidth;
-            //double screenHeight = System.Windows.SystemParameters.PrimaryScreenHeight;
-            //double windowWidth = mainWindow.Width;
-            //double windowHeight = mainWindow.Height;
-            mainWindow.Left = 228;
-            mainWindow.Top = 132;
-            //mainWindow.Left = (screenWidth / 2) - (windowWidth / 2);
-            //mainWindow.Top = (screenHeight / 2) - (windowHeight / 2);
+            if (mainWindow != null)
+            {
+                (new Task(() =>
+                {
+                    double oldWidth = 0, newWidth = 0;
+                    Application.Current.Dispatcher.Invoke((Action)delegate { oldWidth = mainWindow.Width; newWidth = oldWidth; });
+
+
+                    while (oldWidth == newWidth)
+                    {
+                        Application.Current.Dispatcher.Invoke((Action)delegate { newWidth = mainWindow.Width; });
+                        Thread.Sleep(50);
+                    }
+
+                    Application.Current.Dispatcher.Invoke((Action)delegate
+                    {
+
+                        double screenWidth = System.Windows.SystemParameters.PrimaryScreenWidth;
+                        double screenHeight = System.Windows.SystemParameters.PrimaryScreenHeight;
+                        double windowWidth = mainWindow.Width;
+                        double windowHeight = mainWindow.Height;
+                        mainWindow.Left = (screenWidth / 2) - (windowWidth / 2);
+                        mainWindow.Top = (screenHeight / 2) - (windowHeight / 2);
+                    });
+
+                    //mainWindow.Left = 228;
+                    //mainWindow.Top = 132;
+                })).Start();
+            }
         }
     }
 }

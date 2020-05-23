@@ -79,10 +79,30 @@
       <DependentUpon>BookAdminPageView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Admin\BookAdminPageViewModel.cs" />
+    <Compile Include="Admin\BooksAdminView.xaml.cs">
+      <DependentUpon>BooksAdminView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\BooksAdminViewModel.cs" />
+    <Compile Include="Admin\EditBookView.xaml.cs">
+      <DependentUpon>EditBookView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\EditBookViewModel.cs" />
+    <Compile Include="Admin\EditFilmView.xaml.cs">
+      <DependentUpon>EditFilmView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\EditFilmViewModel.cs" />
+    <Compile Include="Admin\EditSerialView.xaml.cs">
+      <DependentUpon>EditSerialView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\EditSerialViewModel.cs" />
     <Compile Include="Admin\FilmAdminPageView.xaml.cs">
       <DependentUpon>FilmAdminPageView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Admin\FilmAdminPageViewModel.cs" />
+    <Compile Include="Admin\FilmsAdminPageView.xaml.cs">
+      <DependentUpon>FilmsAdminPageView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\FilmsAdminPageViewModel.cs" />
     <Compile Include="Admin\HomeAdminPageView.xaml.cs">
       <DependentUpon>HomeAdminPageView.xaml</DependentUpon>
     </Compile>
@@ -95,6 +115,10 @@
       <DependentUpon>SerialAdminPageView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Admin\SerialAdminPageViewModel.cs" />
+    <Compile Include="Admin\SerialsAdminView.xaml.cs">
+      <DependentUpon>SerialsAdminView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\SerialsAdminViewModel.cs" />
     <Compile Include="BookPage\BookPageView.xaml.cs">
       <DependentUpon>BookPageView.xaml</DependentUpon>
     </Compile>
@@ -141,6 +165,7 @@
     <Compile Include="Models\Serial.cs" />
     <Compile Include="Models\Series.cs" />
     <Compile Include="Models\User.cs" />
+    <Compile Include="PasswordCoder\PasswordCoder.cs" />
     <Compile Include="Registration\RegistrationView.xaml.cs">
       <DependentUpon>RegistrationView.xaml</DependentUpon>
     </Compile>
@@ -164,7 +189,27 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Admin\BooksAdminView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Admin\EditBookView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Admin\EditFilmView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Admin\EditSerialView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Admin\FilmAdminPageView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Admin\FilmsAdminPageView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -177,6 +222,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Admin\SerialAdminPageView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Admin\SerialsAdminView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

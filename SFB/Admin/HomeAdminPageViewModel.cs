@@ -92,7 +92,7 @@ namespace SFB.Admin
                     user = item;
                 }
             }
-            user.Password = genRandPassword;
+            user.Password = PasswordCoder.PasswordCoder.GetHash(genRandPassword);
             MailsService.SendEmailAsync(user.Mail, "New password", "SFB",
                 "Your new password for " + user.Login + " is :" + genRandPassword);
             unitOfWork.Users.Update(user);

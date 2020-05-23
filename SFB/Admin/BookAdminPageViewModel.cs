@@ -87,6 +87,22 @@ namespace SFB.Admin
             }
             else MessageBox.Show("Incorrect data");
         }
+
+        private Command _backCommand;
+        public ICommand BackCommand
+        {
+            get
+            {
+                if (_backCommand == null)
+                    _backCommand = new Command(Back);
+                return _backCommand;
+            }
+        }
+        public void Back()
+        {
+            if (MainAdminViewModel.MainAdminContext != null)
+                MainAdminViewModel.MainAdminContext.WindowState = 9;
+        }
         #endregion
     }
 }

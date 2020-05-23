@@ -62,3 +62,15 @@ C:\Users\Julia\Documents\учеба\4 сем\курсач ООП\SFB\SFB\obj\Deb
 C:\Users\Julia\Documents\учеба\4 сем\курсач ООП\SFB\SFB\obj\Debug\Login\ForgetPasswordView.g.cs
 C:\Users\Julia\Documents\учеба\4 сем\курсач ООП\SFB\SFB\obj\Debug\Login\ForgetPasswordView.baml
 C:\Users\Julia\Documents\учеба\4 сем\курсач ООП\SFB\SFB\obj\Debug\SFB.csprojAssemblyReference.cache
+C:\Users\Julia\Documents\учеба\4 сем\курсач ООП\SFB\SFB\obj\Debug\Admin\FilmsAdminPageView.g.cs
+C:\Users\Julia\Documents\учеба\4 сем\курсач ООП\SFB\SFB\obj\Debug\Admin\FilmsAdminPageView.baml
+C:\Users\Julia\Documents\учеба\4 сем\курсач ООП\SFB\SFB\obj\Debug\Admin\EditFilmView.g.cs
+C:\Users\Julia\Documents\учеба\4 сем\курсач ООП\SFB\SFB\obj\Debug\Admin\EditFilmView.baml
+C:\Users\Julia\Documents\учеба\4 сем\курсач ООП\SFB\SFB\obj\Debug\Admin\EditSerialView.g.cs
+C:\Users\Julia\Documents\учеба\4 сем\курсач ООП\SFB\SFB\obj\Debug\Admin\SerialsAdminView.g.cs
+C:\Users\Julia\Documents\учеба\4 сем\курсач ООП\SFB\SFB\obj\Debug\Admin\EditSerialView.baml
+C:\Users\Julia\Documents\учеба\4 сем\курсач ООП\SFB\SFB\obj\Debug\Admin\SerialsAdminView.baml
+C:\Users\Julia\Documents\учеба\4 сем\курсач ООП\SFB\SFB\obj\Debug\Admin\BooksAdminView.g.cs
+C:\Users\Julia\Documents\учеба\4 сем\курсач ООП\SFB\SFB\obj\Debug\Admin\EditBookView.g.cs
+C:\Users\Julia\Documents\учеба\4 сем\курсач ООП\SFB\SFB\obj\Debug\Admin\BooksAdminView.baml
+C:\Users\Julia\Documents\учеба\4 сем\курсач ООП\SFB\SFB\obj\Debug\Admin\EditBookView.baml

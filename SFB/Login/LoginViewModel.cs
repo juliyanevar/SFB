@@ -120,7 +120,7 @@ namespace SFB.Login
             MessageBox.Show(CheckLogin());
             if (enter)
             {
-                MainWindowViewModel.WindowContext.User = unitOfWork.Users.FindUser(_login, _password);
+                MainWindowViewModel.WindowContext.User = unitOfWork.Users.FindUser(_login, PasswordCoder.PasswordCoder.GetHash(_password));
                 DependencyObject ucParent = user.Parent;
 
                 while (!(ucParent is Window))
@@ -135,6 +135,13 @@ namespace SFB.Login
                     MainWindowViewModel.WindowContext.WindowState = 3;
                 else MainWindowViewModel.WindowContext.WindowState = 2;
                 _login = null;
+            }
+            else
+            {
+                _login = null;
+                _password = null;
+                NotifyPropertyChanged("Login");
+                NotifyPropertyChanged("Password");
             }
         }
 
@@ -192,11 +199,12 @@ namespace SFB.Login
         #region LogIn
         public string CheckLogin()
         {
+            enter = false;
             if (_login != null)
             {
                 if (_password != null)
                 {
-                    if (unitOfWork.Users.FindUser(_login, _password).Login != null)
+                    if (unitOfWork.Users.FindUser(_login, PasswordCoder.PasswordCoder.GetHash( _password)).Login != null)
                     {
                         enter = true;
                         return "The user is logged in";

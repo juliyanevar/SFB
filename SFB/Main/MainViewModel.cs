@@ -16,6 +16,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 
@@ -115,7 +116,12 @@ namespace SFB.Main
 
         public void ToLogin()
         {
-            MainWindowViewModel.WindowContext.WindowState = 0;
+            MessageBoxResult result = MessageBox.Show("Do you want to change the user?", "Change user",
+                 MessageBoxButton.YesNo, MessageBoxImage.Question);
+            if (result == MessageBoxResult.Yes)
+            {
+                MainWindowViewModel.WindowContext.WindowState = 0;
+            }
         }
 
         public void ToHomePage()
@@ -175,14 +181,6 @@ namespace SFB.Main
                         return new SerialPageView();
                     case 9:
                         return new SeriesView();
-                    case 10:
-                        return new HomeAdminPageView();
-                    case 11:
-                        return new SerialAdminPageView();
-                    case 12:
-                        return new FilmAdminPageView();
-                    case 13:
-                        return new BookAdminPageView();
 
                 }
                 return new MainView();
@@ -194,49 +192,49 @@ namespace SFB.Main
             get => (MainViewModel)userCon[0];
         }
 
-        public static HomePageView HomePageContext
+        public static HomePageViewModel HomePageContext
         {
-            get => (HomePageView)userCon[1];
+            get => (HomePageViewModel)userCon[1];
         }
 
-        public static FilmPageView FilmPageContext
+        public static FilmPageViewModel FilmPageContext
         {
-            get => (FilmPageView)userCon[2];
+            get => (FilmPageViewModel)userCon[2];
         }
 
-        public static FilmsPageView FilmsPageContext
+        public static FilmsPageViewModel FilmsPageContext
         {
-            get => (FilmsPageView)userCon[3];
+            get => (FilmsPageViewModel)userCon[3];
         }
 
-        public static SerialsPageView SerialsPageContext
+        //public static SerialsPageViewModel SerialsPageContext
+        //{
+        //    get => (SerialsPageViewModel)userCon[4];
+        //}
+
+        //public static BooksPageViewModel BooksPageContext
+        //{
+        //    get => (BooksPageViewModel)userCon[5];
+        //}
+
+        public static BookPageViewModel BookPageContext
         {
-            get => (SerialsPageView)userCon[4];
+            get => (BookPageViewModel)userCon[6];
         }
 
-        public static BooksPageView BooksPageContext
+        public static ChaptersViewModel ChaptersContext
         {
-            get => (BooksPageView)userCon[5];
+            get => (ChaptersViewModel)userCon[7];
         }
 
-        public static BookPageView BookPageContext
+        public static SerialPageViewModel SerialPageContext
         {
-            get => (BookPageView)userCon[6];
+            get => (SerialPageViewModel)userCon[8];
         }
 
-        public static ChaptersView ChaptersContext
+        public static SeriesViewModel SeriesContext
         {
-            get => (ChaptersView)userCon[7];
-        }
-
-        public static SerialPageView SerialPageContext
-        {
-            get => (SerialPageView)userCon[8];
-        }
-
-        public static SeriesView SeriesContext
-        {
-            get => (SeriesView)userCon[9];
+            get => (SeriesViewModel)userCon[9];
         }
 
         

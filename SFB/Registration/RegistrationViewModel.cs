@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
+using SFB.PasswordCoder;
 
 namespace SFB.Registration
 {
@@ -60,7 +61,7 @@ namespace SFB.Registration
             MessageBox.Show(CheckLogin());
             if(reg)
             {
-                MainWindowViewModel.WindowContext.WindowState = 2;
+                MainWindowViewModel.WindowContext.WindowState = 0;
             }
         }
 
@@ -160,6 +161,8 @@ namespace SFB.Registration
         {
             if (_login==null)
                 return "Enter your username";
+            if (_login.Length > 20)
+                return "Too long username";
             if (unitOfWork.Users.FindTheSameLogin(_login).Login != null)
                 return "This username already exists";
             return CheckMail();
@@ -169,8 +172,6 @@ namespace SFB.Registration
         {
             if (_mail == null)
                 return "Enter your mail";
-            if (unitOfWork.Users.FindTheSameMail(_mail).Login != null)
-                return "You can only register one user per email address";
             return CheckPasswords();
         }
 
@@ -184,7 +185,7 @@ namespace SFB.Registration
                     {
                         if (_password1 == _password2)
                         {
-                            unitOfWork.Users.Create(new User(_login, _password1, _mail));
+                            unitOfWork.Users.Create(new User(_login, PasswordCoder.PasswordCoder.GetHash(_password1), _mail));
                             reg = true;
                             return "The user is registered";
                         }

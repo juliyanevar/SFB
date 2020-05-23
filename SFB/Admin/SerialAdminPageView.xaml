@@ -10,6 +10,9 @@
              Resources="{StaticResource MaterialDesign}"
              d:DesignHeight="600" d:DesignWidth="830">
     <Grid>
+        <Button HorizontalAlignment="Left" VerticalAlignment="Top" Style="{StaticResource MaterialDesignIconForegroundButton}"  Command="{Binding BackCommand}">
+            <materialDesign:PackIcon Kind="ArrowLeft" Height="25" Width="25" />
+        </Button>
         <StackPanel Orientation="Horizontal">
             <Grid Width="415" Height="600">
                 <StackPanel Orientation="Vertical" HorizontalAlignment="Center">

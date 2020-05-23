@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\Julia\Documents\учеба\4 сем\курсач ООП\SFB\SFB\App.xaml
-191028817335
+251566628070
 
-581341345389
+71470717837
 21510261722
-Admin\BookAdminPageView.xaml;Admin\FilmAdminPageView.xaml;Admin\HomeAdminPageView.xaml;Admin\MainAdminView.xaml;Admin\SerialAdminPageView.xaml;BookPage\BookPageView.xaml;BooksPage\BooksPageView.xaml;Chapters\ChaptersView.xaml;FilmPage\FilmPageView.xaml;FilmsPage\FilmsPageView.xaml;HomePage\HomePageView.xaml;Login\ForgetPasswordView.xaml;Login\LoginView.xaml;MainWindow.xaml;Main\MainView.xaml;Registration\RegistrationView.xaml;SerialPage\SerialPageView.xaml;SerialsPage\SerialsPageView.xaml;SeriesPage\SeriesView.xaml;
+Admin\BookAdminPageView.xaml;Admin\BooksAdminView.xaml;Admin\EditBookView.xaml;Admin\EditFilmView.xaml;Admin\EditSerialView.xaml;Admin\FilmAdminPageView.xaml;Admin\FilmsAdminPageView.xaml;Admin\HomeAdminPageView.xaml;Admin\MainAdminView.xaml;Admin\SerialAdminPageView.xaml;Admin\SerialsAdminView.xaml;BookPage\BookPageView.xaml;BooksPage\BooksPageView.xaml;Chapters\ChaptersView.xaml;FilmPage\FilmPageView.xaml;FilmsPage\FilmsPageView.xaml;HomePage\HomePageView.xaml;Login\ForgetPasswordView.xaml;Login\LoginView.xaml;MainWindow.xaml;Main\MainView.xaml;Registration\RegistrationView.xaml;SerialPage\SerialPageView.xaml;SerialsPage\SerialsPageView.xaml;SeriesPage\SeriesView.xaml;
 
-True
+False
 

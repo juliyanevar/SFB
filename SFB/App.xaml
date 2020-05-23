@@ -36,6 +36,12 @@
         <a:SerialAdminPageViewModel x:Key="SerialAdminPageViewModel"/>
         <a:MainAdminViewModel x:Key="MainAdminViewModel"/>
         <l:ForgetPasswordViewModel x:Key="ForgetPasswordViewModel"/>
+        <a:FilmsAdminPageViewModel x:Key="FilmsAdminPageViewModel"/>
+        <a:EditFilmViewModel x:Key="EditFilmViewModel"/>
+        <a:SerialsAdminViewModel x:Key="SerialsAdminViewModel"/>
+        <a:EditSerialViewModel x:Key="EditSerialViewModel"/>
+        <a:BooksAdminViewModel x:Key="BooksAdminViewModel"/>
+        <a:EditBookViewModel x:Key="EditBookViewModel"/>
         <ResourceDictionary x:Key="MaterialDesign">
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml" />

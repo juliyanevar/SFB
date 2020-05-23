@@ -1,9 +1,11 @@
 ﻿using SFB.Commands;
+using SFB.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 
@@ -11,7 +13,33 @@ namespace SFB.Admin
 {
     public class MainAdminViewModel:ViewModelBase
     {
-        public static object[] userCon = new object[5];
+        public Film Film;
+        public Film GetFilm
+        {
+            get
+            {
+                return Film;
+            }
+        }
+
+        public Serial Serial;
+        public Serial GetSerial
+        {
+            get
+            {
+                return Serial;
+            }
+        }
+
+        public Book Book;
+        public Book GetBook
+        {
+            get
+            {
+                return Book;
+            }
+        }
+        public static object[] userCon = new object[11];
         public MainAdminViewModel()
         {
             userCon[0] = this;
@@ -19,6 +47,12 @@ namespace SFB.Admin
             userCon[2] = (new SerialAdminPageView()).DataContext;
             userCon[3] = (new FilmAdminPageView()).DataContext;
             userCon[4] = (new BookAdminPageView()).DataContext;
+            userCon[5] = (new FilmsAdminPageView()).DataContext;
+            userCon[6] = (new EditFilmView()).DataContext;
+            userCon[7] = (new SerialsAdminView()).DataContext;
+            userCon[8] = (new EditSerialView()).DataContext;
+            userCon[9] = (new BooksAdminView()).DataContext;
+            userCon[10] = (new EditBookView()).DataContext;
         }
         #region Commands
         private Command _closeWindowCommand;
@@ -63,7 +97,12 @@ namespace SFB.Admin
 
         public void ToLogin()
         {
-            MainWindowViewModel.WindowContext.WindowState = 0;
+            MessageBoxResult result = MessageBox.Show("Do you want to change the user?", "Change user",
+                MessageBoxButton.YesNo, MessageBoxImage.Question);
+            if (result == MessageBoxResult.Yes)
+            {
+                MainWindowViewModel.WindowContext.WindowState = 0;
+            }
         }
 
         public void ToHomePage()
@@ -113,35 +152,77 @@ namespace SFB.Admin
                         return new FilmAdminPageView();
                     case 4:
                         return new BookAdminPageView();
+                    case 5:
+                        return new FilmsAdminPageView();
+                    case 6:
+                        return new EditFilmView();
+                    case 7:
+                        return new SerialsAdminView();
+                    case 8:
+                        return new EditSerialView();
+                    case 9:
+                        return new BooksAdminView();
+                    case 10:
+                        return new EditBookView();
 
                 }
                 return new MainAdminView();
             }
         }
 
-        public static MainAdminView MainAdminContext
+        public static MainAdminViewModel MainAdminContext
         {
-            get => (MainAdminView)userCon[0];
+            get => (MainAdminViewModel)userCon[0];
         }
 
-        public static HomeAdminPageView HomeAdminPageContext
+        public static HomeAdminPageViewModel HomeAdminPageContext
         {
-            get => (HomeAdminPageView)userCon[1];
+            get => (HomeAdminPageViewModel)userCon[1];
         }
 
-        public static SerialAdminPageView SerialAdminPageContext
+        public static SerialAdminPageViewModel SerialAdminPageContext
         {
-            get => (SerialAdminPageView)userCon[2];
+            get => (SerialAdminPageViewModel)userCon[2];
         }
 
-        public static FilmAdminPageView FilmAdminPageContext
+        public static FilmAdminPageViewModel FilmAdminPageContext
         {
-            get => (FilmAdminPageView)userCon[3];
+            get => (FilmAdminPageViewModel)userCon[3];
         }
 
-        public static BookAdminPageView BookAdminPageContext
+        public static BookAdminPageViewModel BookAdminPageContext
         {
-            get => (BookAdminPageView)userCon[4];
+            get => (BookAdminPageViewModel)userCon[4];
+        }
+
+        public static FilmsAdminPageViewModel FilmsAdminPageContext
+        {
+            get => (FilmsAdminPageViewModel)userCon[5];
+        }
+
+        public static EditFilmViewModel EditFilmContext
+        {
+            get => (EditFilmViewModel)userCon[6];
+        }
+
+        public static SerialsAdminViewModel SerialsAdminContext
+        {
+            get => (SerialsAdminViewModel)userCon[7];
+        }
+
+        public static EditSerialViewModel EditSerialContext
+        {
+            get => (EditSerialViewModel)userCon[8];
+        }
+
+        public static BooksAdminViewModel BooksAdminContext
+        {
+            get => (BooksAdminViewModel)userCon[9];
+        }
+
+        public static EditBookViewModel EditBookContext
+        {
+            get => (EditBookViewModel)userCon[10];
         }
         #endregion
 
@@ -161,15 +242,15 @@ namespace SFB.Admin
                 switch (_selectedPage)
                 {
                     case 0:
-                        _windowState = 2;
+                        _windowState = 7;
                         NotifyPropertyChanged("MainUserControl");
                         break;
                     case 1:
-                        _windowState = 3;
+                        _windowState = 5;
                         NotifyPropertyChanged("MainUserControl");
                         break;
                     case 2:
-                        _windowState = 4;
+                        _windowState = 9;
                         NotifyPropertyChanged("MainUserControl");
                         break;
 
@@ -177,14 +258,5 @@ namespace SFB.Admin
             }
         }
         #endregion
-
-
-        public void Test()
-        {
-            if (MainWindowViewModel.WindowContext != null)
-            {
-                MainWindowViewModel.WindowContext.CenterWindowOnScreen();
-            }
-        }
     }
 }
